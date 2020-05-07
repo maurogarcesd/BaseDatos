@@ -1,0 +1,96 @@
+.navbar {
+    min-height: min-content;
+    max-height: auto;
+    max-width: auto;
+    padding-top: 0px; 
+    padding-bottom: auto;
+    margin-top: auto;
+    margin-right: 0;
+    padding-left: 0px;
+}
+
+
+.navbar-brand {
+    font-family: 'Roboto', 'Garamond', serif;
+    font-size: 42px;
+    padding-right: 10px;
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-right: 0;
+    text-align: end;
+    font-weight: bolder;
+    font-family: 'Roboto';
+    font-size: 15px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+.navbar-brand {
+    
+    font-family: 'Roboto';
+    font-size: 15px;
+    color: white;
+}
+.navbar-toggle {
+margin-top: 15px; 
+}
+body { padding-top: 110px; }
+
+}
+
+
+.navbar-default .navbar-brand {
+      color: #ffffff;
+      font-weight: bold;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+color: #488A87;
+background-color: transparent;
+}
+
+.navbar-default {
+    background-color: #01602D;
+    border-color: #aaaaaa;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+    font-size: 17px;
+    padding-top: 10px;
+}
+
+.navbar-inverse .navbar-brand {
+color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    background-color: #E5E5E5;
+}
+
+@media (min-width:1024px) { 
+    .navbar > .container {
+        text-align: center;
+    }
+    .navbar-header,.navbar-brand,.navbar .navbar-nav,.navbar .navbar-nav > li {
+        float: none;
+        display: inline-block;
+    }
+    .collapse.navbar-collapse {
+        float: none;
+        width: auto;
+        clear: none;
+        text-align: center;
+    }
+}
+
+.dropdown-menu {
+    background: #f9f9f5;
+}
+
+.btn-group{
+margin: auto;
+justify-content: center;
+
+}
