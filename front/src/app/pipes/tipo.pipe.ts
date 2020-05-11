@@ -10,7 +10,7 @@ export class TipoPipe implements PipeTransform {
     if (arg === '' || arg.length < 5) return value;
     const resultBases = [];
     for (const base of value) {
-      if (base.NOMBRE.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
+      if (base.TIPO_RECURSO.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
         resultBases.push(base);
       };
     };

@@ -1,96 +1,97 @@
 <!--Boton cerrar session-->
-   <!-- <ul class="nav nav-pills fixed-bottom justify-content-end p-3" >
+<!-- <ul class="nav nav-pills fixed-bottom justify-content-end p-3" >
   <li class="nav-item">
     <a class="nav-link active " href="http://aplicacionesbiblioteca.udea.edu.co:2048/logout">Cerrar Session</a>
   </li>
 </ul>  -->
 
-<div class="container" style="padding-bottom: 50px; padding-left: 2rem; padding-right: 2rem;"> 
-  
-<nav class="navbar-brand navbar-default  fixed-bottom" style="text-align: center; ">
-  <a class="navbar-brand" href="http://aplicacionesbiblioteca.udea.edu.co:2048/logout" >Cerrar session</a>
-</nav>
-   
+<div class="container" style="padding-bottom: 50px; padding-left: 2rem; padding-right: 2rem;">
+
+  <nav class="navbar-brand navbar-default  fixed-bottom" style="text-align: center; ">
+    <a class="navbar-brand" href="http://aplicacionesbiblioteca.udea.edu.co:2048/logout">Cerrar session</a>
+  </nav>
+
   <h3 class="text-center p-4">Recursos Electrónicos</h3>
   <div class="row">
     <div class="col">
       <div class="form-group">
         <input type="text" class="form-control" name="filterList" placeholder="Buscar..." [(ngModel)]="filterList">
-        <div class="row row-cols-2 px-2">
-          <!-- <div class=" col " >
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" id="customRadioInline1" checked="checked" name="customRadioInline1" class="custom-control-input">
-              <label class="custom-control-label checked" style="text-size-adjust: auto;" for="customRadioInline1">Orden alfabético</label>
-            </div>
+        <div class="row  px-2 py-2" style="height: min-content; grid-auto-rows: auto;">
 
+          <div class="btn-group py-1">
+            <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" style="background-color: #009579; border-color: turquoise">
+              Filtrar por Área Académica
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" data-toggle="" (click)='listaAreas("")'>Todas </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" *ngFor='let option of listAreas' (click)='listaAreas(option)'
+                data-toggle="option">{{option}}</a>
+            </div>
           </div>
-          <div class=" col " >
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-              <label class="custom-control-label" style="padding-left: initial;" for="customRadioInline2">Los más visitados</label>
+          <div class="btn-group ">
+            <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" style="background-color: #009579; border-color: turquoise;">
+              Filtrar por Tipo Recurso
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" data-toggle="" (click)='listaTipos("")'>Todas </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" *ngFor='let option of listTipos' (click)='listaTipos(option)'
+                data-toggle="option">{{option}}</a>
             </div>
-          </div> -->
-       
-         <!--area de botones-->
-        </div>      
-      </div>
-
-    <div class="btn-group px-1 " >
-          <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Filtrar por Área Académica
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Todas</a>
-            <div class="dropdown-divider"></div>
-            <ng-container *ngFor="let base of bases ">
-
-              <a class="dropdown-item"  href="#">{{base.AREA_ACADEMICA}}</a>
-        
-            </ng-container>
           </div>
         </div>
-        <div class="btn-group px-1" >
-          <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             Filtrar por Tipo de Recurso
-          </button>
-          <div class="dropdown-menu " >
-            <a class="dropdown-item" href="#">Todas</a>
-                 <div class="dropdown-divider"></div>
-                            
-                  <a class="dropdown-item"   (click)="listaTipo('Base de Datos')" >Base de Datos</a>
-                  <a class="dropdown-item"  href="#">Revista individual</a>
-                  <a class="dropdown-item"  href="#">Libros electrónicos</a>
-            
-          </div>
-       </div>
+      </div>
+
+
+
+      <!--   <div class="btn-group px-1">
+
+        <select class='select-option' #mySelect (change)='listaTipos(mySelect.value)'>
+          <option value="">Todas</option>
+          <option class='option' *ngFor='let option of listTipos' [value]="option">{{option}}
+          </option>
+        </select>
+        <select class='select-option' #mySelect1 (change)='listaAreas(mySelect1.value)'>
+          <option value="">Todas</option>
+          <option class='option' *ngFor='let option of listAreas' [value]="option">{{option}}
+          </option>
+        </select>
+      </div> -->
+
 
     </div>
-      
-  </div>
-        
 
-  
-<div class="row row-cols-2 px-2">
-  <div class=" col px-1   my-2 " *ngFor="let base of bases | filtro: filterList | tipo: filterTipo" >
-    <div class="card " style="border-radius:15px; border-color: #009579; border-width: thin;"  >
-    
-        <div class="card-header" style="font-weight: bold; color: white; height:1rem; font-size: 0,7rem;  text-align: center; padding-bottom: 1.5rem; padding-top:inherit; background-color: #009579; border-top-left-radius:15px; border-top-right-radius:15px; ">
+  </div>
+
+
+
+  <div class="row row-cols-2 px-2">
+    <div class=" col px-1   my-2 " *ngFor="let base of filterListTipo | filtro: filterList | tipo: filterTipo">
+      <div class="card " style="border-radius:15px; border-color: #009579; border-width: thin;">
+
+        <div class="card-header"
+          style="font-weight: bold; color: white; height:1rem; font-size: 0,7rem;  text-align: center; padding-bottom: 1.5rem; padding-top:inherit; background-color: #009579; border-top-left-radius:15px; border-top-right-radius:15px; ">
           {{base.NOMBRE}}
         </div>
         <a href="{{base.URL}}" class="href stretched-link"></a>
         <div class="img embed-responsive embed-responsive-1by1">
-        <img alt="Card image cap " class="card-img-top embed-responsive-item" src="http://cirene.udea.edu.co/basesdedatos/views/Logos/{{base.LOGO}}" alt="smiley face">
-        </div> 
-        <div class="card-footer text-muted" style="text-align: center; border-bottom-left-radius:15px; border-bottom-right-radius:15px; padding-top: inherit; padding-bottom: 0.1rem; background-color: #009579;">
-          <span class="badge badge-pill badge-info" style="vertical-align:center; font-size: 0,7rem; background-color:transparent;">{{base.TIPO_RECURSO}}
-          </span>
+          <img alt="Card image cap " class="card-img-top embed-responsive-item"
+            src="http://cirene.udea.edu.co/basesdedatos/views/Logos/{{base.LOGO}}" alt="smiley face">
         </div>
-  
-      </div>
-    
-  </div>
+        <div class="card-footer"
+        style="font-weight: bold; color: white; height:1.5rem; font-size:0.8rem;  text-align: center; border-bottom-left-radius:15px; border-bottom-right-radius:15px; padding-left: inherit; padding-right: inherit; padding-top: inherit;  padding-bottom: 1.4rem; background-color: #009579;">
+          {{base.TIPO_RECURSO}}
+          
+        </div>
 
-</div>  
+      </div>
+
+    </div>
+
+  </div>
 
 
 
